@@ -1,26 +1,21 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
 
@@ -31,11 +26,44 @@ public class MainActivity extends AppCompatActivity {
     private final int IMAGE_PICKER_REQUEST = 1;
     int finalHeight, finalWidth;
     RelativeLayout relavtive;
+    ScaleToFitWidthHeightTransform sc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+Bundle b = new Bundle();
 
+b = getIntent().getExtras();
+finalWidth = b.getInt("sirina");
+finalHeight = b.getInt("visina");
+Uri slika = Uri.parse(b.getString("slika"));
+
+
+        RelativeLayout relavtive = findViewById(R.id.layout2);
+
+      ViewGroup.LayoutParams params = relavtive.getLayoutParams();
+
+        ViewGroup.LayoutParams homeLayoutsparams = relavtive.getLayoutParams();
+
+        homeLayoutsparams.width = finalWidth;
+
+        Log.d("VELICINA", String.valueOf(homeLayoutsparams.width));
+        homeLayoutsparams.height = finalHeight;
+        relavtive.setLayoutParams(homeLayoutsparams);
+
+        sc = new ScaleToFitWidthHeightTransform(1200,true);
+
+
+        ImageView iv = findViewById(R.id.imageView);
+        Picasso.with(this)
+                .load(slika)
+                .transform(sc)
+                .into(iv);
+
+
+
+
+        showButtons();
        /* int rotation = getWindowManager().getDefaultDisplay()
                 .getRotation();
         // DisplayMetrics dm = new DisplayMetrics();
@@ -70,16 +98,7 @@ public class MainActivity extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER | Gravity.CENTER, 10, 0);
         toast.show();*/
 
-Button selectImage = findViewById(R.id.selectImage);
 
-selectImage.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(i, IMAGE_PICKER_REQUEST);
-
-    }
-});
 
 
 
@@ -92,26 +111,36 @@ selectImage.setOnClickListener(new View.OnClickListener() {
 
 
 
-            ScaleToFitWidthHeightTransform sc = new ScaleToFitWidthHeightTransform(1200,true);
-            ImageView iv = findViewById(R.id.imageView);
+            sc = new ScaleToFitWidthHeightTransform(1200,true);
+
+
+             ImageView iv = findViewById(R.id.imageView);
             Picasso.with(this)
                     .load(selectedImage)
                     .transform(sc)
                     .into(iv);
 
+
             RelativeLayout relavtive = findViewById(R.id.layout2);
+
             ViewGroup.LayoutParams homeLayoutsparams = relavtive.getLayoutParams();
 
-            homeLayoutsparams.width = ScaleToFitWidthHeightTransform.sirina ;
+            homeLayoutsparams.width = sirina;
 
-            Log.d("VELICINA", String.valueOf(homeLayoutsparams.width));
-            homeLayoutsparams.height = ScaleToFitWidthHeightTransform.visina;
+           // Log.d("VELICINA", String.valueOf(homeLayoutsparams.width));
+            homeLayoutsparams.height = visina;
+            relavtive.setLayoutParams(homeLayoutsparams);
 
-
+            Log.d("VELICINA", String.valueOf(getHeightOfView(relavtive)));
             showButtons();
 
 
         }
+    }
+    private int getHeightOfView(View contentview) {
+        contentview.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        //contentview.getMeasuredWidth();
+        return contentview.getMeasuredHeight();
     }
 
 
