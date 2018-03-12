@@ -17,7 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.squareup.picasso.Picasso;
 
-import static com.example.vlatkopopovic.facebookphotochecker.LayoutWrapContentUpdater.wrapContentAgain;
+
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
 
