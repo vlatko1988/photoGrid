@@ -1,7 +1,10 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.IOException;
 
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
@@ -44,14 +50,19 @@ public class Main2Activity extends AppCompatActivity {
 
 
             ScaleToFitWidthHeightTransform sc = new ScaleToFitWidthHeightTransform(1200,true);
-
-
+            Bitmap bitmap = null;
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),selectedImage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            sc.transform(bitmap);
             //ImageView iv = findViewById(R.id.imageView);
-            Picasso.with(this)
-                    .load(selectedImage)
-                    .transform(sc);
+
              int visina = ScaleToFitWidthHeightTransform.visina;
              int sirina = ScaleToFitWidthHeightTransform.sirina;
+
+
 
 
             Intent i = new Intent(this, MainActivity.class);

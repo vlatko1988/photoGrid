@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.squareup.picasso.Picasso;
 
+import static com.example.vlatkopopovic.facebookphotochecker.LayoutWrapContentUpdater.wrapContentAgain;
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
 import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
 
@@ -38,32 +40,41 @@ finalWidth = b.getInt("sirina");
 finalHeight = b.getInt("visina");
 Uri slika = Uri.parse(b.getString("slika"));
 
-
         RelativeLayout relavtive = findViewById(R.id.layout2);
+         ConstraintLayout cs = findViewById(R.id.cl);
+        ViewGroup.LayoutParams kurac = cs.getLayoutParams();
 
-      ViewGroup.LayoutParams params = relavtive.getLayoutParams();
 
-        ViewGroup.LayoutParams homeLayoutsparams = relavtive.getLayoutParams();
-
-        homeLayoutsparams.width = finalWidth;
-
-        Log.d("VELICINA", String.valueOf(homeLayoutsparams.width));
-        homeLayoutsparams.height = finalHeight;
-        relavtive.setLayoutParams(homeLayoutsparams);
-
-        sc = new ScaleToFitWidthHeightTransform(1200,true);
+        sc = new ScaleToFitWidthHeightTransform(kurac.height,true);
 
 
         ImageView iv = findViewById(R.id.imageView);
         Picasso.with(this)
                 .load(slika)
-                .transform(sc)
+                .resize(finalWidth,finalHeight)
+                //.transform(sc)
                 .into(iv);
 
 
 
 
+        ViewGroup.LayoutParams dimensions = relavtive.getLayoutParams();
+
+        dimensions.width = finalWidth;
+        Log.d("VELICINA", String.valueOf( iv.getWidth()));
+        dimensions.height = finalHeight;
+
+
+
+        //relavtive.setLayoutParams(dimensions);
+
+       // relavtive.requestLayout();
+
+
+
+
         showButtons();
+       //
        /* int rotation = getWindowManager().getDefaultDisplay()
                 .getRotation();
         // DisplayMetrics dm = new DisplayMetrics();
@@ -103,40 +114,19 @@ Uri slika = Uri.parse(b.getString("slika"));
 
 
 
-    }@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == IMAGE_PICKER_REQUEST && resultCode == RESULT_OK && null != data) {
-            Uri selectedImage = data.getData();
-
-
-
-            sc = new ScaleToFitWidthHeightTransform(1200,true);
-
-
-             ImageView iv = findViewById(R.id.imageView);
-            Picasso.with(this)
-                    .load(selectedImage)
-                    .transform(sc)
-                    .into(iv);
-
-
-            RelativeLayout relavtive = findViewById(R.id.layout2);
-
-            ViewGroup.LayoutParams homeLayoutsparams = relavtive.getLayoutParams();
-
-            homeLayoutsparams.width = sirina;
-
-           // Log.d("VELICINA", String.valueOf(homeLayoutsparams.width));
-            homeLayoutsparams.height = visina;
-            relavtive.setLayoutParams(homeLayoutsparams);
-
-            Log.d("VELICINA", String.valueOf(getHeightOfView(relavtive)));
-            showButtons();
-
-
-        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
     private int getHeightOfView(View contentview) {
         contentview.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         //contentview.getMeasuredWidth();
