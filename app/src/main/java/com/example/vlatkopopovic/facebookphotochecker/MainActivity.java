@@ -45,7 +45,7 @@ Uri slika = Uri.parse(b.getString("slika"));
         ViewGroup.LayoutParams kurac = cs.getLayoutParams();
 
 
-        sc = new ScaleToFitWidthHeightTransform(kurac.height,true);
+        //sc = new ScaleToFitWidthHeightTransform(kurac.height,true);
 
 
         ImageView iv = findViewById(R.id.imageView);

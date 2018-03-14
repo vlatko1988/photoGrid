@@ -37,7 +37,7 @@ public class ScaleToFitWidthHeightTransform implements Transformation {
             scale = (float) mSize / source.getHeight();
 
             newSize = Math.round(source.getWidth() * scale);
-            newSize1 = Math.round(source.getHeight() * scale);
+
 
            /*sirina = Math.round(source.getWidth() * scale);
             visina = Math.round(source.getHeight() * scale);*/
@@ -48,8 +48,8 @@ public class ScaleToFitWidthHeightTransform implements Transformation {
             scale = (float) mSize / source.getWidth();
 
             newSize = Math.round(source.getHeight() * scale);
-            sirina = Math.round(source.getWidth() * scale);
-            visina = Math.round(source.getHeight() * scale);
+            /*sirina = Math.round(source.getWidth() * scale);
+            visina = Math.round(source.getHeight() * scale);*/
             scaleBitmap = Bitmap.createScaledBitmap(source,  mSize,newSize, true);
             sirina = scaleBitmap.getWidth();
             visina = scaleBitmap.getHeight();
