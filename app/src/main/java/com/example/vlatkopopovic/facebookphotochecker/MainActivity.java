@@ -6,11 +6,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -27,12 +30,18 @@ public class MainActivity extends AppCompatActivity {
     Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,button21,button22,button23,button24,button25;
     private final int IMAGE_PICKER_REQUEST = 1;
     int finalHeight, finalWidth;
+    int counter = 0;
     RelativeLayout relavtive;
     ScaleToFitWidthHeightTransform sc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 Bundle b = new Bundle();
 
 b = getIntent().getExtras();
@@ -61,7 +70,7 @@ Uri slika = Uri.parse(b.getString("slika"));
         ViewGroup.LayoutParams dimensions = relavtive.getLayoutParams();
 
         dimensions.width = finalWidth;
-        Log.d("VELICINA", String.valueOf( iv.getWidth()));
+
         dimensions.height = finalHeight;
 
 
@@ -152,6 +161,9 @@ Uri slika = Uri.parse(b.getString("slika"));
                       btn1 = false;
                       btn_percent_1 = 4;
 
+                      counter--;
+                      Log.i("kita", String.valueOf(counter));
+
                   }else{
 
                       button1.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
@@ -159,6 +171,8 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button1.setTextColor(Color.WHITE);
                       btn1 = true;
                       btn_percent_1 = 0;
+                      counter++;
+                      Log.i("kita", String.valueOf(counter));
                   }
 
               }
@@ -177,6 +191,7 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button2.setText("");
                       btn2 = false;
                       btn_percent_2 = 4;
+                      counter--;
                   }else{
 
                       button2.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
@@ -185,6 +200,7 @@ Uri slika = Uri.parse(b.getString("slika"));
 
                       btn2 = true;
                       btn_percent_2 = 0;
+                      counter++;
                   }
 
               }
@@ -202,12 +218,13 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button3.setBackgroundColor(Color.TRANSPARENT);
                       button3.setText("");
                       btn3 = false;
+                      counter--;
                   }else{
 
                       button3.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
                       button3.setText("4%");
                       button3.setTextColor(Color.WHITE);
-
+                      counter++;
                       btn3 = true;
                   }
 
@@ -226,6 +243,7 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button4.setBackgroundColor(Color.TRANSPARENT);
                       button4.setText("");
                       btn4 = false;
+
                   }else{
 
                       button4.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));

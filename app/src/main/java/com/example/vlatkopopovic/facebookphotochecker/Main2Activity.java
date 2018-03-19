@@ -1,37 +1,38 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
-import com.squareup.picasso.Picasso;
-
-import java.io.File;
 import java.io.IOException;
-
-import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
-import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
 
 public class Main2Activity extends AppCompatActivity {
     private final int IMAGE_PICKER_REQUEST = 1;
          int p;
          int l;
+    int kurcina;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Button landscape = findViewById(R.id.button);
         Button portrait = findViewById(R.id.button2);
@@ -53,7 +54,11 @@ public class Main2Activity extends AppCompatActivity {
                 startActivityForResult(i, IMAGE_PICKER_REQUEST);
             }
         });
+
+
     }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -74,7 +79,7 @@ public class Main2Activity extends AppCompatActivity {
 
               //int a =  Math.round(height/(Resources.getSystem().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
 
-                ScaleToFitWidthHeightTransform sc = new ScaleToFitWidthHeightTransform(1200,true);
+                ScaleToFitWidthHeightTransform sc = new ScaleToFitWidthHeightTransform(height,true);
                 Bitmap bitmap = null;
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),selectedImage);
