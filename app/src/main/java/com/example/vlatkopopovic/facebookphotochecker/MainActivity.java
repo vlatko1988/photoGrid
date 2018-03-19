@@ -1,28 +1,24 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
-
-
-import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
-import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
 
 public class MainActivity extends AppCompatActivity {
     boolean btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn20,btn21,btn22,btn23,btn24,btn25;
@@ -31,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private final int IMAGE_PICKER_REQUEST = 1;
     int finalHeight, finalWidth;
     int counter = 0;
+    ConstraintLayout cs;
     RelativeLayout relavtive;
     ScaleToFitWidthHeightTransform sc;
     @Override
@@ -50,7 +47,7 @@ finalHeight = b.getInt("visina");
 Uri slika = Uri.parse(b.getString("slika"));
 
         RelativeLayout relavtive = findViewById(R.id.layout2);
-         ConstraintLayout cs = findViewById(R.id.cl);
+          cs = findViewById(R.id.cl);
         ViewGroup.LayoutParams kurac = cs.getLayoutParams();
 
 
@@ -83,6 +80,13 @@ Uri slika = Uri.parse(b.getString("slika"));
 
 
         showButtons();
+
+        if(counter > 20){
+
+            Toast.makeText(this,"Ne moze bre!",Toast.LENGTH_LONG).show();
+
+
+        }
        //
        /* int rotation = getWindowManager().getDefaultDisplay()
                 .getRotation();
@@ -161,8 +165,11 @@ Uri slika = Uri.parse(b.getString("slika"));
                       btn1 = false;
                       btn_percent_1 = 4;
 
-                      counter--;
+                      counter-=4;
+
+
                       Log.i("kita", String.valueOf(counter));
+
 
                   }else{
 
@@ -171,9 +178,23 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button1.setTextColor(Color.WHITE);
                       btn1 = true;
                       btn_percent_1 = 0;
-                      counter++;
+                      counter+=4;
+
                       Log.i("kita", String.valueOf(counter));
                   }
+                  Snackbar snackbar = Snackbar
+                          .make(cs, "Text takes: " + String.valueOf(counter) + "%" + " of photo" , Snackbar.LENGTH_SHORT);
+
+                  snackbar.setAction("Share", new View.OnClickListener() {
+                      public void onClick(View v) {
+                          Toast toast = Toast.makeText(getApplicationContext(), "SHARED",
+                                  Toast.LENGTH_LONG);
+                          toast.show();
+                      }
+                  });
+                  snackbar.show();
+
+
 
               }
           });
@@ -191,7 +212,8 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button2.setText("");
                       btn2 = false;
                       btn_percent_2 = 4;
-                      counter--;
+                      counter-=4;
+
                   }else{
 
                       button2.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
@@ -200,8 +222,12 @@ Uri slika = Uri.parse(b.getString("slika"));
 
                       btn2 = true;
                       btn_percent_2 = 0;
-                      counter++;
+                      counter+=4;
+
                   }
+                  Snackbar snackbar = Snackbar
+                          .make(cs, "Text takes: " + String.valueOf(counter) + "%" + " of photo" , Snackbar.LENGTH_SHORT);
+                  snackbar.show();
 
               }
           });
@@ -218,15 +244,18 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button3.setBackgroundColor(Color.TRANSPARENT);
                       button3.setText("");
                       btn3 = false;
-                      counter--;
+                      counter-=4;
                   }else{
 
                       button3.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
                       button3.setText("4%");
                       button3.setTextColor(Color.WHITE);
-                      counter++;
+                      counter+=4;
                       btn3 = true;
                   }
+                  Snackbar snackbar = Snackbar
+                          .make(cs, "Text takes: " + String.valueOf(counter) + "%" + " of photo" , Snackbar.LENGTH_SHORT);
+                  snackbar.show();
 
               }
           });
@@ -243,6 +272,7 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button4.setBackgroundColor(Color.TRANSPARENT);
                       button4.setText("");
                       btn4 = false;
+                      counter-=4;
 
                   }else{
 
@@ -251,7 +281,11 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button4.setTextColor(Color.WHITE);
 
                       btn4 = true;
+                      counter+=4;
                   }
+                  Snackbar snackbar = Snackbar
+                          .make(cs, "Text takes: " + String.valueOf(counter) + "%" + " of photo" , Snackbar.LENGTH_SHORT);
+                  snackbar.show();
 
               }
           });
@@ -268,6 +302,7 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button5.setBackgroundColor(Color.TRANSPARENT);
                       button5.setText("");
                       btn5 = false;
+                      counter-=4;
                   }else{
 
                       button5.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
@@ -275,7 +310,11 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button5.setTextColor(Color.WHITE);
 
                       btn5 = true;
+                      counter+=4;
                   }
+                  Snackbar snackbar = Snackbar
+                          .make(cs, "Text takes: " + String.valueOf(counter) + "%" + " of photo" , Snackbar.LENGTH_SHORT);
+                  snackbar.show();
 
               }
           });
@@ -292,6 +331,7 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button6.setBackgroundColor(Color.TRANSPARENT);
                       button6.setText("");
                       btn6 = false;
+                      counter-=4;
                   }else{
 
                       button6.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_red));
@@ -299,9 +339,13 @@ Uri slika = Uri.parse(b.getString("slika"));
                       button6.setTextColor(Color.WHITE);
 
                       btn6 = true;
+                      counter+=4;
                   }
-
+                  Snackbar snackbar = Snackbar
+                          .make(cs, "Text takes: " + String.valueOf(counter) + "%" + " of photo" , Snackbar.LENGTH_SHORT);
+                  snackbar.show();
               }
+
           });
           button7 = findViewById(R.id.btn_7);
           button7.setOnClickListener(new View.OnClickListener() {
