@@ -2,6 +2,7 @@ package com.example.vlatkopopovic.facebookphotochecker;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -23,6 +25,10 @@ public class Main2Activity extends AppCompatActivity {
     private final int IMAGE_PICKER_REQUEST = 1;
          int p;
          int l;
+         int p2;
+         int l2;
+         int width;
+         int height;
     int kurcina;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +42,32 @@ public class Main2Activity extends AppCompatActivity {
 
         Button landscape = findViewById(R.id.button);
         Button portrait = findViewById(R.id.button2);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+         height = displayMetrics.heightPixels;
+       width = displayMetrics.widthPixels;
+
+
+        int rotation = getWindowManager().getDefaultDisplay()
+                .getRotation();
+        // DisplayMetrics dm = new DisplayMetrics();
+        // getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int orientation;
+        CharSequence text;
+
+
+
 
 
         landscape.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 l = 1;
                 Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
                 startActivityForResult(i, IMAGE_PICKER_REQUEST);
             }
         });
@@ -70,8 +95,10 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-
             if (l == 1){
+
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 int height = displayMetrics.heightPixels;
@@ -99,7 +126,10 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(i);
 
 
+
             }if (p == 2){
+
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 int height = displayMetrics.heightPixels;
@@ -126,6 +156,11 @@ public class Main2Activity extends AppCompatActivity {
 
 
             }
+
+
+
+
+
 
 
 
