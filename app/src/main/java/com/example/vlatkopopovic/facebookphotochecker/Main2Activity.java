@@ -42,7 +42,9 @@ public class Main2Activity extends AppCompatActivity {
 
         Button landscape = findViewById(R.id.button);
         Button portrait = findViewById(R.id.button2);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
          height = displayMetrics.heightPixels;

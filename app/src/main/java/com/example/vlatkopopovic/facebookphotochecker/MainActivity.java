@@ -1,6 +1,6 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
-import android.content.pm.ActivityInfo;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private final int IMAGE_PICKER_REQUEST = 1;
     int finalHeight, finalWidth;
     int counter = 0;
+    Uri slika;
     ConstraintLayout cs;
     RelativeLayout relavtive;
     ScaleToFitWidthHeightTransform sc;
@@ -46,7 +46,7 @@ Bundle b = new Bundle();
 b = getIntent().getExtras();
 finalWidth = b.getInt("sirina");
 finalHeight = b.getInt("visina");
-Uri slika = Uri.parse(b.getString("slika"));
+ slika = Uri.parse(b.getString("slika"));
 
         RelativeLayout relavtive = findViewById(R.id.layout2);
           cs = findViewById(R.id.cl);
@@ -193,9 +193,15 @@ Uri slika = Uri.parse(b.getString("slika"));
 
                   snackbar.setAction("Share", new View.OnClickListener() {
                       public void onClick(View v) {
-                          Toast toast = Toast.makeText(getApplicationContext(), "SHARED",
+
+                          Intent shareIntent = new Intent();
+                          shareIntent.setAction(Intent.ACTION_SEND);
+                          shareIntent.putExtra(Intent.EXTRA_STREAM, slika);
+                          shareIntent.setType("image/jpeg");
+                          startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.share)));
+                         /* Toast toast = Toast.makeText(getApplicationContext(), "SHARED",
                                   Toast.LENGTH_LONG);
-                          toast.show();
+                          toast.show();*/
                       }
                   });
                   snackbar.show();

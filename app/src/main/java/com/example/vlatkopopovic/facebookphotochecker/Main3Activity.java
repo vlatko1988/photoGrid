@@ -128,15 +128,6 @@ public class Main3Activity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
     private int getHeightOfView(View contentview) {
         contentview.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         //contentview.getMeasuredWidth();
