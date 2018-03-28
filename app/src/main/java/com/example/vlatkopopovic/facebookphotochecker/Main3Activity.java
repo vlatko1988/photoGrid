@@ -1,7 +1,6 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,10 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,17 +19,14 @@ import android.widget.RelativeLayout;
 
 import com.squareup.picasso.Picasso;
 
-
-import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.sirina;
-import static com.example.vlatkopopovic.facebookphotochecker.ScaleToFitWidthHeightTransform.visina;
-
 public class Main3Activity extends AppCompatActivity {
     boolean btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn20,btn21,btn22,btn23,btn24,btn25;
     int btn_percent_1,btn_percent_2,btn_percent_3,btn_percent_4,btn_percent_5;
     Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,button21,button22,button23,button24,button25;
-    private final int IMAGE_PICKER_REQUEST = 1;
+
     int finalHeight, finalWidth;
-    RelativeLayout relavtive;
+    Uri slika;
+
     ScaleToFitWidthHeightTransform sc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +42,7 @@ public class Main3Activity extends AppCompatActivity {
         b = getIntent().getExtras();
         finalWidth = b.getInt("sirina");
         finalHeight = b.getInt("visina");
-        Uri slika = Uri.parse(b.getString("slika"));
+       slika = Uri.parse(b.getString("slika"));
 
         RelativeLayout relavtive = findViewById(R.id.layout2);
         ConstraintLayout cs = findViewById(R.id.cl);
@@ -66,7 +60,16 @@ public class Main3Activity extends AppCompatActivity {
                 .into(iv);
 
 
-
+        MovableFloatingActionButton mv = findViewById(R.id.fab);
+        mv.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, slika);
+                shareIntent.setType("image/jpeg");
+                startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.share)));
+            }
+        });
 
         ViewGroup.LayoutParams dimensions = relavtive.getLayoutParams();
 
@@ -128,11 +131,6 @@ public class Main3Activity extends AppCompatActivity {
 
 
 
-    private int getHeightOfView(View contentview) {
-        contentview.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        //contentview.getMeasuredWidth();
-        return contentview.getMeasuredHeight();
-    }
 
     @Override
     public void onBackPressed() {
@@ -152,11 +150,11 @@ finish();
                 //System.out.println(String.valueOf(btn1));
 
                 if (btn1){
-
                     button1.setBackgroundColor(Color.TRANSPARENT);
                     button1.setText("");
                     btn1 = false;
                     btn_percent_1 = 4;
+
 
                 }else{
 

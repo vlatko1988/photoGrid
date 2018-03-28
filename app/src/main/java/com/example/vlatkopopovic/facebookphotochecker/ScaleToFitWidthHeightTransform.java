@@ -1,7 +1,7 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
 import android.graphics.Bitmap;
-import android.widget.Toast;
+
 
 import com.squareup.picasso.Transformation;
 

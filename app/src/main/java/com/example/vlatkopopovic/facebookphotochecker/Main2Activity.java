@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +26,9 @@ public class Main2Activity extends AppCompatActivity {
     private final int IMAGE_PICKER_REQUEST = 1;
          int p;
          int l;
-         int p2;
-         int l2;
          int width;
          int height;
-    int kurcina;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,15 +47,10 @@ public class Main2Activity extends AppCompatActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
          height = displayMetrics.heightPixels;
-       width = displayMetrics.widthPixels;
+         width = displayMetrics.widthPixels;
 
 
-        int rotation = getWindowManager().getDefaultDisplay()
-                .getRotation();
-        // DisplayMetrics dm = new DisplayMetrics();
-        // getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int orientation;
-        CharSequence text;
+
 
 
 
@@ -104,7 +98,9 @@ public class Main2Activity extends AppCompatActivity {
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 int height = displayMetrics.heightPixels;
+
                 int width = displayMetrics.widthPixels;
+
 
               //int a =  Math.round(height/(Resources.getSystem().getDisplayMetrics().xdpi/DisplayMetrics.DENSITY_DEFAULT));
 
@@ -121,6 +117,8 @@ public class Main2Activity extends AppCompatActivity {
 
                 int visina = ScaleToFitWidthHeightTransform.visina;
                 int sirina = ScaleToFitWidthHeightTransform.sirina;
+                Log.d("kitaSirina slike",String.valueOf(sirina));
+                Log.d("kitaVisina slike",String.valueOf(visina));
                 Intent i = new Intent(this, MainActivity.class);
                 i.putExtra("slika",selectedImage.toString());
                 i.putExtra("visina",visina);
