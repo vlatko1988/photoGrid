@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="com.example.vlatkopopovic.facebookphotochecker.MainActivity">
+    tools:context="com.example.vlatkopopovic.facebookphotochecker.LandscapeActivity">
 
 
     <com.example.vlatkopopovic.facebookphotochecker.MovableFloatingActionButton
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+         />
 
     <RelativeLayout
         android:id="@+id/layout2"
@@ -63,7 +63,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
-            />
+
 
             <Button
                 android:id="@+id/btn_2"
@@ -259,6 +259,181 @@
 
             <Button
                 android:id="@+id/btn_25"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_26"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_27"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_28"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_29"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_30"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_31"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_32"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_33"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_34"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_35"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_36"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_37"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_38"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_39"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_40"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_41"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_42"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_43"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_44"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_45"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_46"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_47"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_48"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_49"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+            <Button
+                android:id="@+id/btn_50"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@android:color/transparent"
