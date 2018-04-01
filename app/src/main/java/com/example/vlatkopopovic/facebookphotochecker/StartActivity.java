@@ -15,6 +15,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 
 public class StartActivity extends AppCompatActivity {
@@ -23,6 +25,7 @@ public class StartActivity extends AppCompatActivity {
     int l;
     int width;
     int height;
+     Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,7 @@ public class StartActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == IMAGE_PICKER_REQUEST && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
+
 
             if (l == 1) {
 
@@ -135,6 +139,11 @@ public class StartActivity extends AppCompatActivity {
 
             }
         }
+    } @Override
+    public void onBackPressed() {
+
+        moveTaskToBack(true);
+
     }
 
 }

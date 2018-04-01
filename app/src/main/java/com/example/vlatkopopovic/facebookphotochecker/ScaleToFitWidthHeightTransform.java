@@ -43,6 +43,8 @@ public class ScaleToFitWidthHeightTransform implements Transformation {
             scaleBitmap= Bitmap.createScaledBitmap(source, newSize, mSize, true);
             sirina = scaleBitmap.getWidth();
             visina = scaleBitmap.getHeight();
+
+
         }else{
             scale = (float) mSize / source.getWidth();
 

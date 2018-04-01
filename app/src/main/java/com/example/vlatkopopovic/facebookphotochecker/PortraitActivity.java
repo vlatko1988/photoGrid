@@ -135,7 +135,12 @@ public class PortraitActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
+        Intent intent = new Intent(this, StartActivity.class);
+
+        startActivity(intent);
         finish();
+
     }
 
 
