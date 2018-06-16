@@ -22,10 +22,14 @@ import com.squareup.picasso.Picasso;
 
 public class LandscapeActivity extends AppCompatActivity {
     boolean btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, btn21, btn22, btn23, btn24, btn25,
-            btn26, btn27, btn28, btn29, btn30, btn31, btn32, btn33, btn34, btn35, btn36, btn37, btn38, btn39, btn40, btn41, btn42, btn43, btn44, btn45, btn46, btn47, btn48, btn49, btn50;
+            btn26, btn27, btn28, btn29, btn30, btn31, btn32, btn33, btn34, btn35, btn36, btn37, btn38, btn39, btn40, btn41, btn42, btn43, btn44, btn45, btn46, btn47, btn48, btn49, btn50,
+            btn51, btn52, btn53, btn54, btn55, btn56, btn57, btn58, btn59, btn60, btn61, btn62, btn63, btn64, btn65, btn66, btn67, btn68, btn69, btn70, btn71, btn72, btn73, btn74, btn75,
+            btn76, btn77, btn78, btn79, btn80, btn81, btn82, btn83, btn84, btn85, btn86, btn87, btn88, btn89, btn90, btn91, btn92, btn93, btn94, btn95, btn96, btn97, btn98, btn99, btn100;
 
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25,
-            button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button42, button43, button44, button45, button46, button47, button48, button49, button50;
+            button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button42, button43, button44, button45, button46, button47, button48, button49, button50,
+            button51, button52, button53, button54, button55, button56, button57, button58, button59, button60, button61, button62, button63, button64, button65, button66, button67, button68, button69, button70, button71, button72, button73, button74, button75,
+            button76, button77, button78, button79, button80, button81, button82, button83, button84, button85, button86, button87, button88, button89, button90, button91, button92, button93, button94, button95, button96, button97, button98, button99, button100;
 
     int finalHeight, finalWidth;
     int counter = 0;
@@ -999,6 +1003,924 @@ public class LandscapeActivity extends AppCompatActivity {
                 } else {
                     ButtonLogic.buttonOn(button50);
                     btn50 = true;
+                }
+                snack();
+
+            }
+        });
+        button51 = findViewById(R.id.btn_51);
+        button51.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                System.out.println(String.valueOf(btn51));
+                if (btn51) {
+                    ButtonLogic.buttonOff(button51);
+                    btn50 = false;
+                } else {
+                    ButtonLogic.buttonOn(button51);
+                    btn51 = true;
+                }
+                snack();
+
+            }
+        });
+        button52 = findViewById(R.id.btn_52);
+        button52.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn52) {
+                    ButtonLogic.buttonOff(button52);
+                    btn52 = false;
+                } else {
+                    ButtonLogic.buttonOn(button52);
+                    btn52 = true;
+                }
+                snack();
+
+            }
+        });
+        button53 = findViewById(R.id.btn_53);
+        button53.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn53) {
+                    ButtonLogic.buttonOff(button53);
+                    btn53 = false;
+                } else {
+                    ButtonLogic.buttonOn(button53);
+                    btn53 = true;
+                }
+                snack();
+
+            }
+        });
+        button54 = findViewById(R.id.btn_54);
+        button54.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn54) {
+                    ButtonLogic.buttonOff(button54);
+                    btn54 = false;
+                } else {
+                    ButtonLogic.buttonOn(button54);
+                    btn54 = true;
+                }
+                snack();
+
+            }
+        });
+        button54 = findViewById(R.id.btn_54);
+        button54.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn54) {
+                    ButtonLogic.buttonOff(button54);
+                    btn54 = false;
+                } else {
+                    ButtonLogic.buttonOn(button54);
+                    btn54 = true;
+                }
+                snack();
+
+            }
+        });
+        button55 = findViewById(R.id.btn_55);
+        button55.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn55) {
+                    ButtonLogic.buttonOff(button55);
+                    btn55 = false;
+                } else {
+                    ButtonLogic.buttonOn(button55);
+                    btn55 = true;
+                }
+                snack();
+
+            }
+        });
+        button56 = findViewById(R.id.btn_56);
+        button56.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn56) {
+                    ButtonLogic.buttonOff(button56);
+                    btn56 = false;
+                } else {
+                    ButtonLogic.buttonOn(button56);
+                    btn56= true;
+                }
+                snack();
+
+            }
+        });
+        button57 = findViewById(R.id.btn_57);
+        button57.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn57) {
+                    ButtonLogic.buttonOff(button57);
+                    btn57 = false;
+                } else {
+                    ButtonLogic.buttonOn(button57);
+                    btn57 = true;
+                }
+                snack();
+
+            }
+        });
+        button58 = findViewById(R.id.btn_58);
+        button58.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn58) {
+                    ButtonLogic.buttonOff(button58);
+                    btn58 = false;
+                } else {
+                    ButtonLogic.buttonOn(button58);
+                    btn58 = true;
+                }
+                snack();
+
+            }
+        });
+        button59 = findViewById(R.id.btn_59);
+        button59.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn59) {
+                    ButtonLogic.buttonOff(button59);
+                    btn59 = false;
+                } else {
+                    ButtonLogic.buttonOn(button59);
+                    btn59 = true;
+                }
+                snack();
+
+            }
+        });
+        button60 = findViewById(R.id.btn_60);
+        button60.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn60) {
+                    ButtonLogic.buttonOff(button60);
+                    btn60 = false;
+                } else {
+                    ButtonLogic.buttonOn(button60);
+                    btn60 = true;
+                }
+                snack();
+
+            }
+        });
+        button61 = findViewById(R.id.btn_61);
+        button61.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn61) {
+                    ButtonLogic.buttonOff(button61);
+                    btn61 = false;
+                } else {
+                    ButtonLogic.buttonOn(button61);
+                    btn61 = true;
+                }
+                snack();
+
+            }
+        });
+        button62 = findViewById(R.id.btn_62);
+        button62.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn62) {
+                    ButtonLogic.buttonOff(button62);
+                    btn62 = false;
+                } else {
+                    ButtonLogic.buttonOn(button62);
+                    btn62 = true;
+                }
+                snack();
+
+            }
+        });
+        button63 = findViewById(R.id.btn_63);
+        button63.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn63) {
+                    ButtonLogic.buttonOff(button63);
+                    btn63 = false;
+                } else {
+                    ButtonLogic.buttonOn(button63);
+                    btn63 = true;
+                }
+                snack();
+
+            }
+        });
+        button64 = findViewById(R.id.btn_64);
+        button64.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn64) {
+                    ButtonLogic.buttonOff(button64);
+                    btn64 = false;
+                } else {
+                    ButtonLogic.buttonOn(button64);
+                    btn64 = true;
+                }
+                snack();
+
+            }
+        });
+        button65 = findViewById(R.id.btn_65);
+        button65.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn65) {
+                    ButtonLogic.buttonOff(button65);
+                    btn65 = false;
+                } else {
+                    ButtonLogic.buttonOn(button65);
+                    btn65 = true;
+                }
+                snack();
+
+            }
+        });
+        button66 = findViewById(R.id.btn_66);
+        button66.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn66) {
+                    ButtonLogic.buttonOff(button66);
+                    btn66 = false;
+                } else {
+                    ButtonLogic.buttonOn(button66);
+                    btn66 = true;
+                }
+                snack();
+
+            }
+        });
+        button67 = findViewById(R.id.btn_67);
+        button67.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn67) {
+                    ButtonLogic.buttonOff(button67);
+                    btn67 = false;
+                } else {
+                    ButtonLogic.buttonOn(button67);
+                    btn67 = true;
+                }
+                snack();
+
+            }
+        });
+        button68 = findViewById(R.id.btn_68);
+        button68.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn68) {
+                    ButtonLogic.buttonOff(button68);
+                    btn68 = false;
+                } else {
+                    ButtonLogic.buttonOn(button68);
+                    btn68 = true;
+                }
+                snack();
+
+            }
+        });
+        button69 = findViewById(R.id.btn_69);
+        button69.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn69) {
+                    ButtonLogic.buttonOff(button69);
+                    btn69 = false;
+                } else {
+                    ButtonLogic.buttonOn(button69);
+                    btn69 = true;
+                }
+                snack();
+
+            }
+        });
+        button70 = findViewById(R.id.btn_70);
+        button70.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn70) {
+                    ButtonLogic.buttonOff(button70);
+                    btn70 = false;
+                } else {
+                    ButtonLogic.buttonOn(button70);
+                    btn70 = true;
+                }
+                snack();
+
+            }
+        });
+        button71 = findViewById(R.id.btn_71);
+        button71.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn71) {
+                    ButtonLogic.buttonOff(button71);
+                    btn71 = false;
+                } else {
+                    ButtonLogic.buttonOn(button71);
+                    btn71 = true;
+                }
+                snack();
+
+            }
+        });
+        button72 = findViewById(R.id.btn_72);
+        button72.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn72) {
+                    ButtonLogic.buttonOff(button72);
+                    btn72 = false;
+                } else {
+                    ButtonLogic.buttonOn(button72);
+                    btn72 = true;
+                }
+                snack();
+
+            }
+        });
+        button73 = findViewById(R.id.btn_73);
+        button73.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn73) {
+                    ButtonLogic.buttonOff(button73);
+                    btn73 = false;
+                } else {
+                    ButtonLogic.buttonOn(button73);
+                    btn73 = true;
+                }
+                snack();
+
+            }
+        });
+        button74 = findViewById(R.id.btn_74);
+        button74.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn74) {
+                    ButtonLogic.buttonOff(button74);
+                    btn74 = false;
+                } else {
+                    ButtonLogic.buttonOn(button74);
+                    btn74 = true;
+                }
+                snack();
+
+            }
+        });
+        button75 = findViewById(R.id.btn_75);
+        button75.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn75) {
+                    ButtonLogic.buttonOff(button75);
+                    btn75 = false;
+                } else {
+                    ButtonLogic.buttonOn(button75);
+                    btn75 = true;
+                }
+                snack();
+
+            }
+        });
+        button76 = findViewById(R.id.btn_76);
+        button76.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn76) {
+                    ButtonLogic.buttonOff(button76);
+                    btn76 = false;
+                } else {
+                    ButtonLogic.buttonOn(button76);
+                    btn76 = true;
+                }
+                snack();
+
+            }
+        });
+        button77 = findViewById(R.id.btn_77);
+        button77.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn77) {
+                    ButtonLogic.buttonOff(button77);
+                    btn77 = false;
+                } else {
+                    ButtonLogic.buttonOn(button77);
+                    btn77 = true;
+                }
+                snack();
+
+            }
+        });
+        button78 = findViewById(R.id.btn_78);
+        button78.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn78) {
+                    ButtonLogic.buttonOff(button78);
+                    btn78 = false;
+                } else {
+                    ButtonLogic.buttonOn(button78);
+                    btn78 = true;
+                }
+                snack();
+
+            }
+        });
+        button79 = findViewById(R.id.btn_79);
+        button79.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn79) {
+                    ButtonLogic.buttonOff(button79);
+                    btn79 = false;
+                } else {
+                    ButtonLogic.buttonOn(button79);
+                    btn79 = true;
+                }
+                snack();
+
+            }
+        });
+        button80 = findViewById(R.id.btn_80);
+        button80.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn80) {
+                    ButtonLogic.buttonOff(button80);
+                    btn80 = false;
+                } else {
+                    ButtonLogic.buttonOn(button80);
+                    btn80 = true;
+                }
+                snack();
+
+            }
+        });
+        button81 = findViewById(R.id.btn_81);
+        button81.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn81) {
+                    ButtonLogic.buttonOff(button81);
+                    btn81 = false;
+                } else {
+                    ButtonLogic.buttonOn(button81);
+                    btn81 = true;
+                }
+                snack();
+
+            }
+        });
+        button82 = findViewById(R.id.btn_82);
+        button82.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn82) {
+                    ButtonLogic.buttonOff(button82);
+                    btn82 = false;
+                } else {
+                    ButtonLogic.buttonOn(button82);
+                    btn82 = true;
+                }
+                snack();
+
+            }
+        });
+        button83 = findViewById(R.id.btn_83);
+        button83.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn83) {
+                    ButtonLogic.buttonOff(button83);
+                    btn83 = false;
+                } else {
+                    ButtonLogic.buttonOn(button83);
+                    btn83 = true;
+                }
+                snack();
+
+            }
+        });
+        button84 = findViewById(R.id.btn_84);
+        button84.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn84) {
+                    ButtonLogic.buttonOff(button84);
+                    btn84 = false;
+                } else {
+                    ButtonLogic.buttonOn(button84);
+                    btn84 = true;
+                }
+                snack();
+
+            }
+        });
+        button85 = findViewById(R.id.btn_85);
+        button85.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn85) {
+                    ButtonLogic.buttonOff(button85);
+                    btn85 = false;
+                } else {
+                    ButtonLogic.buttonOn(button85);
+                    btn85 = true;
+                }
+                snack();
+
+            }
+        });
+        button86 = findViewById(R.id.btn_86);
+        button86.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn86) {
+                    ButtonLogic.buttonOff(button86);
+                    btn86 = false;
+                } else {
+                    ButtonLogic.buttonOn(button86);
+                    btn86= true;
+                }
+                snack();
+
+            }
+        });
+        button87 = findViewById(R.id.btn_87);
+        button87.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn87) {
+                    ButtonLogic.buttonOff(button87);
+                    btn87 = false;
+                } else {
+                    ButtonLogic.buttonOn(button87);
+                    btn87 = true;
+                }
+                snack();
+
+            }
+        });
+        button88 = findViewById(R.id.btn_88);
+        button88.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn88) {
+                    ButtonLogic.buttonOff(button88);
+                    btn88 = false;
+                } else {
+                    ButtonLogic.buttonOn(button88);
+                    btn88 = true;
+                }
+                snack();
+
+            }
+        });
+        button89 = findViewById(R.id.btn_89);
+        button89.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn89) {
+                    ButtonLogic.buttonOff(button89);
+                    btn89 = false;
+                } else {
+                    ButtonLogic.buttonOn(button89);
+                    btn89 = true;
+                }
+                snack();
+
+            }
+        });
+        button90 = findViewById(R.id.btn_90);
+        button90.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn90) {
+                    ButtonLogic.buttonOff(button90);
+                    btn90 = false;
+                } else {
+                    ButtonLogic.buttonOn(button90);
+                    btn90 = true;
+                }
+                snack();
+
+            }
+        });
+        button91 = findViewById(R.id.btn_91);
+        button91.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn91) {
+                    ButtonLogic.buttonOff(button91);
+                    btn91 = false;
+                } else {
+                    ButtonLogic.buttonOn(button91);
+                    btn91 = true;
+                }
+                snack();
+
+            }
+        });
+        button92 = findViewById(R.id.btn_92);
+        button92.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn92) {
+                    ButtonLogic.buttonOff(button92);
+                    btn92 = false;
+                } else {
+                    ButtonLogic.buttonOn(button92);
+                    btn92 = true;
+                }
+                snack();
+
+            }
+        });
+        button93 = findViewById(R.id.btn_93);
+        button93.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn93) {
+                    ButtonLogic.buttonOff(button93);
+                    btn93 = false;
+                } else {
+                    ButtonLogic.buttonOn(button93);
+                    btn93 = true;
+                }
+                snack();
+
+            }
+        });
+        button94 = findViewById(R.id.btn_94);
+        button94.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn94) {
+                    ButtonLogic.buttonOff(button94);
+                    btn94 = false;
+                } else {
+                    ButtonLogic.buttonOn(button94);
+                    btn94 = true;
+                }
+                snack();
+
+            }
+        });
+        button95 = findViewById(R.id.btn_95);
+        button95.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn95) {
+                    ButtonLogic.buttonOff(button95);
+                    btn95 = false;
+                } else {
+                    ButtonLogic.buttonOn(button95);
+                    btn95 = true;
+                }
+                snack();
+
+            }
+        });
+        button96 = findViewById(R.id.btn_96);
+        button96.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn96) {
+                    ButtonLogic.buttonOff(button96);
+                    btn96 = false;
+                } else {
+                    ButtonLogic.buttonOn(button96);
+                    btn96 = true;
+                }
+                snack();
+
+            }
+        });
+        button97 = findViewById(R.id.btn_97);
+        button97.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn97) {
+                    ButtonLogic.buttonOff(button97);
+                    btn97 = false;
+                } else {
+                    ButtonLogic.buttonOn(button97);
+                    btn97 = true;
+                }
+                snack();
+
+            }
+        });
+        button98 = findViewById(R.id.btn_98);
+        button98.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn98) {
+                    ButtonLogic.buttonOff(button98);
+                    btn98 = false;
+                } else {
+                    ButtonLogic.buttonOn(button98);
+                    btn98 = true;
+                }
+                snack();
+
+            }
+        });
+        button99 = findViewById(R.id.btn_99);
+        button99.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn99) {
+                    ButtonLogic.buttonOff(button99);
+                    btn99 = false;
+                } else {
+                    ButtonLogic.buttonOn(button99);
+                    btn99 = true;
+                }
+                snack();
+
+            }
+        });
+        button100 = findViewById(R.id.btn_100);
+        button100.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+
+                if (btn100) {
+                    ButtonLogic.buttonOff(button100);
+                    btn100 = false;
+                } else {
+                    ButtonLogic.buttonOn(button100);
+                    btn100 = true;
                 }
                 snack();
 
