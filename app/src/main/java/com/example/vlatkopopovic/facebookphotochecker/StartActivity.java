@@ -1,11 +1,14 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -26,6 +30,8 @@ public class StartActivity extends AppCompatActivity {
     int width;
     int height;
      Bitmap image;
+    int heightFromUri;
+    int widthFromUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +43,8 @@ public class StartActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        Button landscape = findViewById(R.id.button);
-        Button portrait = findViewById(R.id.button2);
+
+        Button selectPhotoBtn = findViewById(R.id.button2);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -47,20 +53,15 @@ public class StartActivity extends AppCompatActivity {
         height = displayMetrics.heightPixels;
         width = displayMetrics.widthPixels;
 
-        landscape.setOnClickListener(new View.OnClickListener() {
+        selectPhotoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                l = 1;
-                Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, IMAGE_PICKER_REQUEST);
-            }
-        });
-        portrait.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                p = 2;
-                Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, IMAGE_PICKER_REQUEST);
+                ActivityCompat.requestPermissions(StartActivity.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        1);
+
+
+
             }
         });
 
@@ -74,9 +75,16 @@ public class StartActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == IMAGE_PICKER_REQUEST && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
+                heightFromUri =  bitmap.getHeight();
+                widthFromUri =  bitmap.getWidth();
+                bitmap.getWidth();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-
-            if (l == 1) {
+            if (widthFromUri > heightFromUri) {
 
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -100,8 +108,7 @@ public class StartActivity extends AppCompatActivity {
 
                 int visina = ScaleToFitWidthHeightTransform.visina;
                 int sirina = ScaleToFitWidthHeightTransform.sirina;
-                Log.d("kitaSirina slike", String.valueOf(sirina));
-                Log.d("kitaVisina slike", String.valueOf(visina));
+
                 Intent i = new Intent(this, LandscapeActivity.class);
                 i.putExtra("slika", selectedImage.toString());
                 i.putExtra("visina", visina);
@@ -110,7 +117,7 @@ public class StartActivity extends AppCompatActivity {
 
 
             }
-            if (p == 2) {
+            else {
 
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -125,7 +132,7 @@ public class StartActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 sc.transform(bitmap);
-                //ImageView iv = findViewById(R.id.imageView);
+
 
 
                 int visina = ScaleToFitWidthHeightTransform.visina;
@@ -144,6 +151,32 @@ public class StartActivity extends AppCompatActivity {
 
         moveTaskToBack(true);
 
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(i, IMAGE_PICKER_REQUEST);
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(StartActivity.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 
 }

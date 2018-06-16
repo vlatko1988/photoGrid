@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FacebookPhotoChecker</string>
     <string name="share">share</string>
+    <string name="upload_button">Select photo</string>
 </resources>
