@@ -135,7 +135,7 @@ public class PortraitActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+        ButtonLogic.counter = 0;
         Intent intent = new Intent(this, StartActivity.class);
 
         startActivity(intent);
