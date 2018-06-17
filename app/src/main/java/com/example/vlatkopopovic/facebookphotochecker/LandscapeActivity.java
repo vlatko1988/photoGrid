@@ -1,14 +1,18 @@
 package com.example.vlatkopopovic.facebookphotochecker;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -33,6 +37,7 @@ public class LandscapeActivity extends AppCompatActivity {
 
     int finalHeight, finalWidth;
     int counter = 0;
+    int actionBarHeight;
     Uri slika;
     ConstraintLayout cs;
 
@@ -44,8 +49,18 @@ public class LandscapeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_landscape);
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
+
+        //actionBar.setTitle("");
+//        if (actionBar != null) {
+//            actionBar.hide();
+//        }
+
+
+
+        TypedValue tv = new TypedValue();
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+        {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
         }
         Bundle b = getIntent().getExtras();
 
@@ -53,7 +68,7 @@ public class LandscapeActivity extends AppCompatActivity {
             finalWidth = b.getInt("sirina");
         }
         if (b != null) {
-            finalHeight = b.getInt("visina");
+            finalHeight = b.getInt("visina") - actionBarHeight;
         }
         if (b != null) {
             slika = Uri.parse(b.getString("slika"));
@@ -62,16 +77,26 @@ public class LandscapeActivity extends AppCompatActivity {
         RelativeLayout relavtive = findViewById(R.id.layout2);
         cs = findViewById(R.id.cl);
 
-        MovableFloatingActionButton mv = findViewById(R.id.fab);
-        mv.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_STREAM, slika);
-                shareIntent.setType("image/jpeg");
-                startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.share)));
-            }
-        });
+//        MovableFloatingActionButton mv = findViewById(R.id.fab);
+//        mv.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                if (ButtonLogic.counter > 20){
+//
+//                    showDialogAlert();
+//                    // Toast.makeText(PortraitActivity.this,"This photo contains more than 20% text",Toast.LENGTH_LONG).show();
+//
+//
+//                }else{
+//                    Intent shareIntent = new Intent();
+//                    shareIntent.setAction(Intent.ACTION_SEND);
+//                    shareIntent.putExtra(Intent.EXTRA_STREAM, slika);
+//                    shareIntent.setType("image/jpeg");
+//                    startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.share)));
+//
+//                }
+//
+//            }
+//        });
 
         ImageView iv = findViewById(R.id.imageView);
         Picasso.with(this)
@@ -1927,6 +1952,62 @@ public class LandscapeActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void showDialogAlert(){
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(LandscapeActivity.this);
+        builder.setTitle("Your ad may not run");
+        builder.setIcon(R.drawable.warn);
+        builder.setMessage("Are you shure to share?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // FIRE ZE MISSILES!
+                        Intent shareIntent = new Intent();
+                        shareIntent.setAction(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, slika);
+                        shareIntent.setType("image/jpeg");
+                        startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.share)));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.share, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.share:
+                if (ButtonLogic.counter > 20){
+
+                    showDialogAlert();
+                    // Toast.makeText(PortraitActivity.this,"This photo contains more than 20% text",Toast.LENGTH_LONG).show();
+
+
+                }else{
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, slika);
+                    shareIntent.setType("image/jpeg");
+                    startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.share)));
+
+                }
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
 

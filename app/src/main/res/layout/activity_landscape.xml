@@ -19,6 +19,7 @@
         android:layout_marginTop="8dp"
         android:clickable="true"
         android:src="@drawable/ic_action_share"
+        android:visibility="gone"
         app:backgroundTint="@android:color/holo_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,9 +53,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:horizontalSpacing="2dp"
-            android:verticalSpacing="2dp"
-            app:columnCount="5"
-            app:rowCount="5">
+            android:verticalSpacing="0dp"
+            app:columnCount="10"
+            app:rowCount="10">
 
             <Button
                 android:id="@+id/btn_1"
@@ -264,6 +265,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_26"
                 android:layout_width="0dp"
@@ -271,6 +273,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_27"
                 android:layout_width="0dp"
@@ -278,6 +281,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_28"
                 android:layout_width="0dp"
@@ -285,6 +289,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_29"
                 android:layout_width="0dp"
@@ -292,6 +297,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_30"
                 android:layout_width="0dp"
@@ -299,6 +305,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_31"
                 android:layout_width="0dp"
@@ -306,6 +313,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_32"
                 android:layout_width="0dp"
@@ -313,6 +321,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_33"
                 android:layout_width="0dp"
@@ -320,6 +329,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_34"
                 android:layout_width="0dp"
@@ -327,6 +337,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_35"
                 android:layout_width="0dp"
@@ -334,6 +345,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_36"
                 android:layout_width="0dp"
@@ -341,6 +353,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_37"
                 android:layout_width="0dp"
@@ -348,6 +361,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_38"
                 android:layout_width="0dp"
@@ -355,6 +369,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_39"
                 android:layout_width="0dp"
@@ -362,6 +377,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_40"
                 android:layout_width="0dp"
@@ -369,6 +385,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_41"
                 android:layout_width="0dp"
@@ -376,6 +393,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_42"
                 android:layout_width="0dp"
@@ -383,6 +401,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_43"
                 android:layout_width="0dp"
@@ -390,6 +409,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_44"
                 android:layout_width="0dp"
@@ -397,6 +417,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_45"
                 android:layout_width="0dp"
@@ -404,6 +425,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_46"
                 android:layout_width="0dp"
@@ -411,6 +433,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_47"
                 android:layout_width="0dp"
@@ -418,6 +441,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_48"
                 android:layout_width="0dp"
@@ -425,6 +449,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_49"
                 android:layout_width="0dp"
@@ -432,6 +457,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_50"
                 android:layout_width="0dp"
@@ -439,6 +465,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_51"
                 android:layout_width="0dp"
@@ -647,6 +674,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_76"
                 android:layout_width="0dp"
@@ -654,6 +682,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_77"
                 android:layout_width="0dp"
@@ -661,6 +690,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_78"
                 android:layout_width="0dp"
@@ -668,6 +698,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_79"
                 android:layout_width="0dp"
@@ -675,6 +706,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_80"
                 android:layout_width="0dp"
@@ -682,6 +714,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_81"
                 android:layout_width="0dp"
@@ -689,6 +722,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_82"
                 android:layout_width="0dp"
@@ -696,6 +730,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_83"
                 android:layout_width="0dp"
@@ -703,6 +738,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_84"
                 android:layout_width="0dp"
@@ -710,6 +746,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_85"
                 android:layout_width="0dp"
@@ -717,6 +754,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_86"
                 android:layout_width="0dp"
@@ -724,6 +762,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_87"
                 android:layout_width="0dp"
@@ -731,6 +770,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_88"
                 android:layout_width="0dp"
@@ -738,6 +778,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_89"
                 android:layout_width="0dp"
@@ -745,6 +786,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_90"
                 android:layout_width="0dp"
@@ -752,6 +794,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_91"
                 android:layout_width="0dp"
@@ -759,6 +802,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_92"
                 android:layout_width="0dp"
@@ -766,6 +810,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_93"
                 android:layout_width="0dp"
@@ -773,6 +818,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_94"
                 android:layout_width="0dp"
@@ -780,6 +826,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_95"
                 android:layout_width="0dp"
@@ -787,6 +834,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_96"
                 android:layout_width="0dp"
@@ -794,6 +842,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_97"
                 android:layout_width="0dp"
@@ -801,6 +850,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_98"
                 android:layout_width="0dp"
@@ -808,6 +858,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_99"
                 android:layout_width="0dp"
@@ -815,6 +866,7 @@
                 android:background="@android:color/transparent"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
+
             <Button
                 android:id="@+id/btn_100"
                 android:layout_width="0dp"
